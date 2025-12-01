@@ -1,1 +1,6 @@
-D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\admin\factories\CustomUserAdminResourceFactory.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\admin\factories\CustomAdminResourceProviderFactory.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\admin\providers\CustomAdminResourceProvider.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\admin\resources\CustomAdminResource.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\external\factories\CustomPublicResourceProviderFactory.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\external\providers\CustomPublicResourceProvider.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\external\resources\CustomPublicResource.java

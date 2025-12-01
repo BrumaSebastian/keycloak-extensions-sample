@@ -1,0 +1,6 @@
+keycloak\extensions\sample\resources\admin\factories\CustomAdminResourceProviderFactory.class
+keycloak\extensions\sample\resources\external\factories\CustomPublicResourceProviderFactory.class
+keycloak\extensions\sample\resources\external\resources\CustomPublicResource.class
+keycloak\extensions\sample\resources\admin\providers\CustomAdminResourceProvider.class
+keycloak\extensions\sample\resources\external\providers\CustomPublicResourceProvider.class
+keycloak\extensions\sample\resources\admin\resources\CustomAdminResource.class
