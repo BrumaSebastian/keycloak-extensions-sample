@@ -18,7 +18,7 @@ public class CustomPublicResource {
     @GET
     @Operation(summary = "Get sample info")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGroups() {
+    public Response get() {
         return Response.ok("A simple public resource response for realm: " + session.getContext().getRealm().getName())
                 .build();
     }
