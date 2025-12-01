@@ -131,3 +131,37 @@ curl --location 'http://localhost:8080/admin/realms/demo/custom-admin-extension/
 ```
 
 ![Admin Custom Endpoint](image-2.png)
+
+## How Keycloak Registers and Loads Custom SPIs
+
+Keycloak uses Java’s Service Provider Interface (SPI) mechanism to allow extensions and customizations. The process for registering and loading custom SPIs is as follows:
+
+1. **SPI Declaration**
+
+   - Implement a class that extends Keycloak’s `Spi` interface. This class defines the contract for your custom service.
+
+2. **Provider and Factory Interfaces**
+
+   - Create a provider interface that extends Keycloak’s `Provider` interface. This allows you to declare custom methods for your service.
+   - Create a provider factory interface that extends Keycloak’s `ProviderFactory` interface. This enables you to define multiple provider implementations.
+
+3. **Provider Implementations**
+
+   - Implement your provider logic in classes that implement your provider interface.
+   - Implement corresponding factory classes for each provider.
+
+4. **SPI Registration**
+
+   - Register your SPI by adding its fully qualified class name to the `META-INF/services/org.keycloak.provider.Spi` file in your extension’s resources. This allows Keycloak to discover your SPI at startup.
+
+5. **Provider Factory Registration**
+
+   - Register each provider factory by adding its fully qualified class name to a file named after your SPI class (e.g., `META-INF/services/com.example.MyCustomSpi`). This enables Keycloak to load your provider implementations.
+
+6. **Resource Provider Registration (for REST Endpoints)**
+   - For custom REST endpoints, register your resource provider factories in the appropriate service files:
+     - `META-INF/services/org.keycloak.services.resources.admin.ext.AdminRealmResourceProviderFactory` for admin endpoints.
+     - `META-INF/services/org.keycloak.services.resource.RealmResourceProviderFactory` for public endpoints.
+
+**Summary:**  
+When Keycloak starts, it scans these service files to discover available SPIs and their provider factories. This mechanism enables your custom extensions to be loaded and made available at runtime, allowing you to extend Keycloak’s functionality in a modular way.
