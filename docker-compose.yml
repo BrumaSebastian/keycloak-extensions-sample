@@ -4,6 +4,7 @@ services:
     container_name: keycloak
     command:
       - start-dev
+      - --import-realm
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -22,6 +23,7 @@ services:
       - maildev
     volumes:
       - ./demo/target/keycloak-extensions-demo-1.0.jar:/opt/keycloak/providers/assembly-1.0.0.jar:ro
+      - ./demo-realm.json:/opt/keycloak/data/import/demo-realm.json
 
   maildev:
     image: maildev/maildev
