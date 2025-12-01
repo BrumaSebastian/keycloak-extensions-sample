@@ -4,3 +4,8 @@ D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\exte
 D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\external\factories\CustomPublicResourceProviderFactory.java
 D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\external\providers\CustomPublicResourceProvider.java
 D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\resources\external\resources\CustomPublicResource.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\services\factories\CustomServiceProviderFactory.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\services\factories\DefaultCustomServiceProviderFactory.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\services\providers\CustomServiceProvider.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\services\providers\DefaultCustomServiceProvider.java
+D:\Personal Projects\keycloak-extensions-sample\demo\src\main\java\keycloak\extensions\sample\services\spis\CustomServiceSpi.java
