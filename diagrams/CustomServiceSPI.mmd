@@ -1,0 +1,16 @@
+flowchart TD
+    A["SPI Declaration (CustomServiceSpi)"]
+    B["Provider Factory Interface (CustomServiceProviderFactory)"]
+    C["Provider Interface (CustomServiceProvider)"]
+    D["Provider Implementation (DefaultCustomerServiceProvider)"]
+    E["Provider Factory Implementation (DefaultCustomerServiceProviderFactory)"]
+    F["SPI class registered in<br/>META-INF/services/org.keycloak.provider.Spi"]
+    G["Provider factory registered in<br/>META-INF/services/{SPI-class}"]
+
+    A --> B
+    B --> C
+    C --> D
+    B --> E
+    A --> F
+    E --> G
+

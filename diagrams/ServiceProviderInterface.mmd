@@ -1,0 +1,14 @@
+flowchart TD
+    A["Service Provider Interface"]
+    B["Provider Factory Interface"]
+    C["Provider Interface"]
+    D["Provider Implementation"]
+    E["Provider Factory Implementation"]
+
+    A --> B
+    A --> C
+
+    C --> D
+    B --> E
+
+    E --> D
