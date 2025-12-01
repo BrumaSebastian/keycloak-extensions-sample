@@ -1,0 +1,46 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.7
+    container_name: keycloak
+    command:
+      - start-dev
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloakdb
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: postgres
+      KC_LOG_CONSOLE_COLOR: true
+      KC_HOSTNAME_STRICT: false
+      KC_HOSTNAME_STRICT_HTTPS: false
+      KC_PROXY_ADDRESS_FORWARDING: true
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - maildev
+    volumes:
+      - ./demo/target/keycloak-extensions-demo-1.0.jar:/opt/keycloak/providers/assembly-1.0.0.jar:ro
+
+  maildev:
+    image: maildev/maildev
+    container_name: maildev
+    ports:
+      - "1080:1080" # Web UI
+      - "1025:1025" # SMTP
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: keycloakdb-postgres
+    ports:
+      - "5454:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: keycloakdb
+    volumes:
+      - keycloakdb-postgres_data:/var/lib/postgresql/data
+
+volumes:
+  keycloakdb-postgres_data:
